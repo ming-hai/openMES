@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.messolution.openmes.openmes_util_hibernateHelper.AppTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
