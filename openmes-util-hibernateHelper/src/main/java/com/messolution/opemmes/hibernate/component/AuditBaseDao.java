@@ -11,6 +11,7 @@ import com.googlecode.genericdao.dao.hibernate.GenericDAOImpl;
 import com.messolution.opemmes.hibernate.common.IEntity;
 import com.messolution.opemmes.hibernate.constants.HibernateConstants;
 
+
 public class AuditBaseDao<T, ID extends Serializable>  extends  GenericDAOImpl<T, ID>{
 
 	/**

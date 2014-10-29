@@ -1,11 +1,16 @@
 package com.messolution.openmes.entitys.baseInfo.factoryModel;
 
-import javax.persistence.CascadeType;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import com.messolution.opemmes.hibernate.common.IEntity;
 
@@ -32,7 +37,11 @@ public class Site extends IEntity{
 	
 	private Enterprise enterprise;
 	
-	@Column(length=32)
+	private Set<Area> areas;
+	
+	
+
+	@Column(name="siteName",length=16)
 	public String getName() {
 		return name;
 	}
@@ -41,7 +50,7 @@ public class Site extends IEntity{
 		this.name = name;
 	}
 
-	@Column(length=32)
+	@Column(length=64)
 	public String getDescription() {
 		return description;
 	}
@@ -51,12 +60,25 @@ public class Site extends IEntity{
 	}
    
 	@ManyToOne
-	@JoinColumn(name="Enterprise_Id")
+	@JoinColumn(name="enterprise_Id")
 	public Enterprise getEnterprise() {
 		return enterprise;
 	}
 
+	
 	public void setEnterprise(Enterprise enterprise) {
 		this.enterprise = enterprise;
 	}
+
+	@OneToMany(mappedBy="site")
+	@Cascade({CascadeType.SAVE_UPDATE})
+	public Set<Area> getAreas() {
+		return areas;
+	}
+
+	public void setAreas(Set<Area> areas) {
+		this.areas = areas;
+	}
+	
+	
 }

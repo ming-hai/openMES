@@ -15,7 +15,8 @@ import com.messolution.opemmes.hibernate.common.IEntity;
 
 /**
  * 
- * @declaration:
+ * @declaration:one or more organizations sharing a definite mission, goals and objectives to offer an output
+ *              such as a product or service
  * @project : openmes-plugin-baseInfomation
  * @package : com.messolution.openmes.baseInfo.entitys.factoryModel
  * @create_time : 2014年10月19日下午4:28:14
