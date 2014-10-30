@@ -7,6 +7,19 @@ Scope
 =
     openMES是一个完全依据ISA88和ISA95标准来设计的MES系统，并且具有高度的灵活性，
     为了让你的企业更好的实施openMES或者对openMES进行二次开发,建议你先学习ISA-88和ISA-95 
+###为了更好的融合ISA88和ISA95，本系统模块划分如下：
+* Factory Modeling
+* Product Definition
+* Production Planning
+* Production Resource
+* Detailed Scheduling
+* Production Dispatching
+* Production Information
+* Production Execution
+* Unit Supervision
+* Process Control
+    
+    
 ###ISA88标准简介：<br>
     ISA88是ANSI/ISA-88的简称，是一个适用于批过程制造的标准，ISA88为批控制提供了一组固定
     的标准和术语并且定义了 physical model, procedures, 和recipes。
