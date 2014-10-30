@@ -1,3 +1,4 @@
+/**Copyright (c) 2014 Vincent-Poon**/
 package com.messolution.openmes.entitys.baseInfo.factoryModel;
 
 import javax.persistence.Column;
@@ -10,32 +11,26 @@ import com.messolution.opemmes.hibernate.common.IEntity;
 
 /**
  * 
- * @declaration: physical, geographical or logical grouping determined by the site
- *               NOTE It can contain process cells, production units, production lines, and storage zones.
+ * @declaration:
  * @project : openmes-plugin-baseInfomation
  * @package : com.messolution.openmes.entitys.baseInfo.factoryModel
- * @create_time :2014年10月29日 下午8:28:29
+ * @create_time :2014年10月31日 上午12:21:00
  * @author : panzhichun
  * @mail : mmcpanzhichun@gmail.com
  */
 @Entity
-@Table(name="bi_fm_area")
-public class Area extends IEntity {
+@Table(name="bi_fm_unit")
+public class Unit extends IEntity {
 
-
-	private static final long serialVersionUID = -3314520372507575495L;
+	private static final long serialVersionUID = -3731954529318968682L;
 
 	private String name;
 	
 	private String description;
 	
-	private AreaCategory areaCategory;
-	
-	private Site site;
-	
-	
+	private ProcessCell processCell;
 
-	@Column(name="areaName",length=16)
+	@Column(name="unitName",length=16)
 	public String getName() {
 		return name;
 	}
@@ -54,22 +49,12 @@ public class Area extends IEntity {
 	}
 
 	@ManyToOne
-	@JoinColumn(name="category_Id")
-	public AreaCategory getAreaCategory() {
-		return areaCategory;
+	@JoinColumn(name="processCell_Id")
+	public ProcessCell getProcessCell() {
+		return processCell;
 	}
 
-	public void setAreaCategory(AreaCategory areaCategory) {
-		this.areaCategory = areaCategory;
-	}
-
-	@ManyToOne
-	@JoinColumn(name="site_Id")
-	public Site getSite() {
-		return site;
-	}
-
-	public void setSite(Site site) {
-		this.site = site;
-	}
+	public void setProcessCell(ProcessCell processCell) {
+		this.processCell = processCell;
+	} 
 }
