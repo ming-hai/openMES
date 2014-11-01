@@ -3,14 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.messolution.openmes</groupId>
-		<artifactId>openmes</artifactId>
+		<artifactId>openmes-master</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../openmes/pom.xml</relativePath>
 	</parent>
-	<artifactId>openmes-plugin-baseInfomation</artifactId>
+	<artifactId>openmes-plugin-baseInformation</artifactId>
 	<packaging>jar</packaging>
 
-	<name>openmes-plugin-baseInfomation</name>
+	<name>openmes-plugin-baseInformation</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

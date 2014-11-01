@@ -15,7 +15,7 @@ import com.messolution.openmes.entitys.baseInfo.factoryModel.AreaCategory;
 /**
  * 
  * @declaration:
- * @project : openmes-plugin-baseInfomation
+ * @project : openmes-plugin-baseInformation
  * @package : com.messolution.openmes.dao.baseInfo.factoryModel
  * @create_time :2014年10月29日 下午9:35:44
  * @author : panzhichun
