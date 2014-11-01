@@ -3,6 +3,8 @@ package com.messolution.openmes.entitys.baseInfo.factoryModel;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.messolution.opemmes.hibernate.common.IEntity;
@@ -25,6 +27,8 @@ public class ProductionUnit extends IEntity {
     private String name;
 	
 	private String description;
+	
+	private Area area;
 
 	@Column(name="productionUnitName",length=16)
 	public String getName() {
@@ -42,5 +46,15 @@ public class ProductionUnit extends IEntity {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	@ManyToOne
+	@JoinColumn(name="area_Id")
+	public Area getArea() {
+		return area;
+	}
+
+	public void setArea(Area area) {
+		this.area = area;
 	} 
 }

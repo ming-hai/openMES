@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -34,6 +36,8 @@ public class ProductionLine extends IEntity {
 	private String description;
 	
 	private Set<WorkCell> workCells;
+	
+	private Area area;
 
 	@Column(name="productionLineName",length=16)
 	public String getName() {
@@ -61,6 +65,16 @@ public class ProductionLine extends IEntity {
 
 	public void setWorkCells(Set<WorkCell> workCells) {
 		this.workCells = workCells;
+	}
+
+	@ManyToOne
+	@JoinColumn(name="area_Id")
+	public Area getArea() {
+		return area;
+	}
+
+	public void setArea(Area area) {
+		this.area = area;
 	}
 	
 }

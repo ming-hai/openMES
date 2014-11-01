@@ -1,10 +1,16 @@
 package com.messolution.openmes.entitys.baseInfo.factoryModel;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import com.messolution.opemmes.hibernate.common.IEntity;
 
@@ -33,7 +39,13 @@ public class Area extends IEntity {
 	
 	private Site site;
 	
+	private Set<ProcessCell> processCells;
 	
+	private Set<ProductionUnit> productionUnits;
+	
+	private Set<ProductionLine> productionLines;
+	
+	private Set<StorageZone> storageZones;
 
 	@Column(name="areaName",length=16)
 	public String getName() {
@@ -71,5 +83,45 @@ public class Area extends IEntity {
 
 	public void setSite(Site site) {
 		this.site = site;
+	}
+
+	@OneToMany(mappedBy="area")
+	@Cascade({CascadeType.SAVE_UPDATE})
+	public Set<ProcessCell> getProcessCells() {
+		return processCells;
+	}
+
+	public void setProcessCells(Set<ProcessCell> processCells) {
+		this.processCells = processCells;
+	}
+
+	@OneToMany(mappedBy="area")
+	@Cascade({CascadeType.SAVE_UPDATE})
+	public Set<ProductionUnit> getProductionUnits() {
+		return productionUnits;
+	}
+
+	public void setProductionUnits(Set<ProductionUnit> productionUnits) {
+		this.productionUnits = productionUnits;
+	}
+
+	@OneToMany(mappedBy="area")
+	@Cascade({CascadeType.SAVE_UPDATE})
+	public Set<ProductionLine> getProductionLines() {
+		return productionLines;
+	}
+
+	public void setProductionLines(Set<ProductionLine> productionLines) {
+		this.productionLines = productionLines;
+	}
+
+	@OneToMany(mappedBy="area")
+	@Cascade({CascadeType.SAVE_UPDATE})
+	public Set<StorageZone> getStorageZones() {
+		return storageZones;
+	}
+
+	public void setStorageZones(Set<StorageZone> storageZones) {
+		this.storageZones = storageZones;
 	}
 }

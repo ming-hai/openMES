@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -33,6 +35,8 @@ public class StorageZone extends IEntity {
 	private String description;
 	
 	private Set<StorageUnit> StorageUnits;
+	
+	private Area area;
 
 	@Column(name="storageZoneName",length=16)
 	public String getName() {
@@ -60,5 +64,15 @@ public class StorageZone extends IEntity {
 
 	public void setStorageUnits(Set<StorageUnit> storageUnits) {
 		StorageUnits = storageUnits;
+	}
+
+	@ManyToOne
+	@JoinColumn(name="area_Id")
+	public Area getArea() {
+		return area;
+	}
+
+	public void setArea(Area area) {
+		this.area = area;
 	} 
 }
