@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>openMES</title>
+	<link rel="shortcut icon" href="images/favicon.png" />
+
+	<link rel="stylesheet" href="../css/demo.css" type="text/css" />
+	<script type="text/javascript">
+		dojoConfig = {
+			async: true,
+			locale: "en-gb"
+		};
+	</script>
+	<script type="text/javascript" src="../lib/dojo/dojo.js"></script>
+	<script type="text/javascript" src="../js/src.js" charset="utf-8"></script>
+    
+</head>
+<body class="claro">
+	<div id="preloader">Loading Application...</div>
+	<!-- Using Declarative Require to "hang" some modules off demo object for declarative scripting -->
+	<script type="dojo/require">
+	  "demo.dom": "dojo/dom",
+	  "demo.registry": "dijit/registry"
+	</script>
+	<div data-dojo-type="dijit/layout/BorderContainer" id="mainContainer"
+		data-dojo-props="gutters:true">
+		<div data-dojo-type="dijit/layout/ContentPane" id="headerPane"
+			data-dojo-props="splitter:false, region:'top'">openMES</div>
+		<div data-dojo-type="dijit/layout/BorderContainer" id="mainSplitter"
+			data-dojo-props="liveSplitters: false, design: 'sidebar', region: 'center'">
+			<div data-dojo-type="dijit/layout/AccordionContainer"
+				id="leftAccordion" data-dojo-props="minSize: 20, region: 'leading'">
+				<div data-dojo-type="dijit/layout/ContentPane" id="baseInfo"
+					data-dojo-props="title: 'Based Information', href:'/openmes-plugin-webapp/system/dashBoard!baseInfoIndex.action'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap2"
+					data-dojo-props="title: 'Product Definition', href:'/openmes-plugin-webapp/system/dashBoard!productDefinitionIndex.action'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap3"
+					data-dojo-props="title: 'Production Planning', href:'/openmes-plugin-webapp/system/dashBoard!productionPlanningIndex.action'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap4"
+					data-dojo-props="title: 'Production Resource', href:'ap3.html'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap5"
+					data-dojo-props="title: 'Detailed Scheduling', href:'ap3.html'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap6"
+					data-dojo-props="title: 'Production Dispatching', href:'ap6.html'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap7"
+					data-dojo-props="title: 'Production Information', href:'ap3.html'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap8"
+					data-dojo-props="title: 'Production Execution', href:'ap3.html'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap9"
+					data-dojo-props="title: 'Unit Supervision', href:'ap3.html'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap10"
+					data-dojo-props="title: 'Process Control', href:'ap3.html'"
+					class="paneAccordion"></div>
+			</div>
+			<div data-dojo-type="dijit/layout/TabContainer" id="mainTabContainer"
+				data-dojo-props="region: 'center'">
+				<div data-dojo-type="dijit/layout/ContentPane" id="tabWelcome"
+					data-dojo-props="title: 'Welcome', href:''"></div>
+			</div>
+		</div>
+	</div>
+</body>

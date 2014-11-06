@@ -1,39 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title></title>
-<!-- Common CSS File -->
-<link rel="stylesheet" type="text/css" href="lib/css/w2ui.css" />
-<!-- Common JS File -->
-<script src="lib/js/jquery-2.1.0.js"></script>
-<script type="text/javascript" src="lib/js//w2ui.js"></script>
 </head>
 <body>
-<div id="grid" style="width: 100%; height: 250px;"></div>
 </body>
-<script>
-$(function () {
-    $('#grid').w2grid({
-        name: 'grid',
-        header: 'List of Names',
-        columns: [
-            { field: 'fname', caption: 'First Name', size: '30%' },
-            { field: 'lname', caption: 'Last Name', size: '30%' },
-            { field: 'email', caption: 'Email', size: '40%' },
-            { field: 'sdate', caption: 'Start Date', size: '120px' }
-        ],
-        records: [
-            { recid: 1, fname: "Peter", lname: "Jeremia", email: 'peter@mail.com', sdate: '2/1/2010' },
-            { recid: 2, fname: "Bruce", lname: "Wilkerson", email: 'bruce@mail.com', sdate: '6/1/2010' },
-            { recid: 3, fname: "John", lname: "McAlister", email: 'john@mail.com', sdate: '1/16/2010' },
-            { recid: 4, fname: "Ravi", lname: "Zacharies", email: 'ravi@mail.com', sdate: '3/13/2007' },
-            { recid: 5, fname: "William", lname: "Dembski", email: 'will@mail.com', sdate: '9/30/2011' },
-            { recid: 6, fname: "David", lname: "Peterson", email: 'david@mail.com', sdate: '4/5/2010' }
-        ]
-    });
-});
+<script type="text/javascript">
+function openWindow(url,name,iWidth,iHeight)
+{
+    var url;                             //转向网页的地址;
+    var name;                            //网页名称，可为空;
+    var iWidth;                          //弹出窗口的宽度;
+    var iHeight;                         //弹出窗口的高度;
+    //获得窗口的垂直位置
+    var iTop = (window.screen.availHeight-30-iHeight)/2;        
+    //获得窗口的水平位置
+    var iLeft = (window.screen.availWidth-10-iWidth)/2;    
+    window.open(url,name,'height='+iHeight+',,innerHeight='+iHeight+',width='+iWidth+',innerWidth='+iWidth+',top='+iTop+',left='+iLeft+',status=no,toolbar=no,menubar=no,location=no,resizable=no,scrollbars=0,titlebar=no');
+}
+window.open( "enterpriseAction.action",
+        "newwindow", 
+        "resizable=no,left=0,top=0,width="+(screen.availWidth - 20) +",height=" + (screen.availHeight - 40)
+        ); 
 </script>
 </html>

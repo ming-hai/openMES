@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<package name="springjpaexample" extends="struts-default" namespace="/system">
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+
+		<action name="dashBoard"
+			class="com.messolution.openmes.controller.baseInfo.factoryModel.actions.DashBoardAction"  >
+
+			<result name="baseInfoIndex">/jsp/dashboard/baseInfo.jsp</result>
+			
+			<result name="productDefinitionIndex">/jsp/dashboard/productDefinition.jsp</result>
+			
+			<result name="productionPlanningIndex">/jsp/dashboard/productionPlanning.jsp</result>
+
+		</action>
+
+
+	</package>
+
+</struts>
