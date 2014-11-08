@@ -132,25 +132,77 @@ public class FactoryModelServiceImpl extends GeneralDAOImpl implements IFactoryM
 	
 	
 	public DojoTree getFactoryModelTree(){	
-		DojoTreeItem rootItem = new DojoTreeItem();
-		rootItem.setId("_1");
-		rootItem.setLabel("Web Service");
-		rootItem.setIcon("ocpIconServer");
-		
-		DojoTreeItem dojoTreeItem = new DojoTreeItem();
-		dojoTreeItem.setId("root");
-		List<DojoTreeItem> dojoTreeItemList = new ArrayList<DojoTreeItem>();
-		dojoTreeItemList.add(rootItem);
-		dojoTreeItem.setChildren(dojoTreeItemList);;
-		
-		DojoTree dojoTree = new DojoTree();
-		dojoTree.setIdentifier("id");
-		dojoTree.setLabel("label");
-		List<DojoTreeItem> dojoTreeItemList2 = new ArrayList<DojoTreeItem>();
-		dojoTreeItemList2.add(dojoTreeItem);
-		dojoTree.setItems(dojoTreeItemList2);
-		
-		return dojoTree;
+		 DojoTree dojoTree = new DojoTree();
+		 
+		 List<DojoTreeItem> factoryRootItem = new ArrayList<DojoTreeItem>();
+		 /** enterprise root **/
+		 DojoTreeItem enterpriseRoot = new DojoTreeItem();
+		 enterpriseRoot.setId("enterprise");
+		 enterpriseRoot.setLabel("Enterpirses");
+		 enterpriseRoot.setChildren(getEnterpriseItems());
+		 factoryRootItem.add(enterpriseRoot);
+		 
+		 /** site root **/
+		 DojoTreeItem siteRoot = new DojoTreeItem();
+		 siteRoot.setId("site");
+		 siteRoot.setLabel("Sites");
+		 siteRoot.setChildren(getSiteItems());
+		 factoryRootItem.add(siteRoot);
+		 
+		 /** site root **/
+		 DojoTreeItem areaRoot = new DojoTreeItem();
+		 areaRoot.setId("area");
+		 areaRoot.setLabel("Area");
+		 areaRoot.setChildren(getAreaItems());
+		 factoryRootItem.add(areaRoot);
+		 
+		 
+		 
+		 dojoTree.getRootItem().setChildren(factoryRootItem);
+		 return dojoTree;
 	}
+	
+	private List<DojoTreeItem> getEnterpriseItems(){
+        List<Enterprise> enterprises = enterpriseDao.findAll();
+        List<DojoTreeItem> enterpriseItems = new ArrayList<DojoTreeItem>();
+		for(Enterprise e:enterprises){
+			DojoTreeItem Item = new DojoTreeItem();
+			Item.setId(e.getId());
+			Item.setLabel(e.getName());
+			Item.setIcon("ocpIconCalendar");
+			Item.setChildren(null);
+			enterpriseItems.add(Item);
+		}
+		return enterpriseItems;
+	}
+	
+	private List<DojoTreeItem> getSiteItems(){
+        List<Site> sites = siteDao.findAll();
+        List<DojoTreeItem> siteItems = new ArrayList<DojoTreeItem>();
+		for(Site s:sites){
+			DojoTreeItem Item = new DojoTreeItem();
+			Item.setId(s.getId());
+			Item.setLabel(s.getName());
+			Item.setIcon("ocpIconCalendar");
+			Item.setChildren(null);
+			siteItems.add(Item);
+		}
+		return siteItems;
+	}
+	
+	private List<DojoTreeItem> getAreaItems(){
+        List<Area> areas = areaDao.findAll();
+        List<DojoTreeItem> areaItems = new ArrayList<DojoTreeItem>();
+		for(Area a:areas){
+			DojoTreeItem Item = new DojoTreeItem();
+			Item.setId(a.getId());
+			Item.setLabel(a.getName());
+			Item.setIcon("ocpIconCalendar");
+			Item.setChildren(null);
+			areaItems.add(Item);
+		}
+		return areaItems;
+	}
+	
 
 }

@@ -12,7 +12,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.googlecode.genericdao.search.Search;
 import com.messolution.opemmes.hibernate.component.AuditBaseDao;
+import com.messolution.opemmes.hibernate.constants.HibernateConstants;
 import com.messolution.openmes.dao.baseInfo.factoryModel.AreaDao;
 import com.messolution.openmes.entitys.baseInfo.factoryModel.Area;
 
@@ -60,7 +62,7 @@ public class AreaDaoImpl extends AuditBaseDao<Area, String> implements AreaDao {
 	
 	public List<Area> findAll() {
 		
-		return super.findAll();
+		return search(new Search().addFilterEqual("db_status", HibernateConstants.ACTIVE));
 	}
 
 }

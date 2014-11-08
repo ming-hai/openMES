@@ -7,7 +7,9 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.googlecode.genericdao.search.Search;
 import com.messolution.opemmes.hibernate.component.AuditBaseDao;
+import com.messolution.opemmes.hibernate.constants.HibernateConstants;
 import com.messolution.openmes.dao.baseInfo.factoryModel.EnterpriseDao;
 import com.messolution.openmes.entitys.baseInfo.factoryModel.Enterprise;
 /**
@@ -46,7 +48,7 @@ public class EnterpriseDaoImpl extends AuditBaseDao<Enterprise, String > impleme
 	}
 
 	public List<Enterprise> findAll(){
-		return super.findAll();
+		return search(new Search().addFilterEqual("db_status", HibernateConstants.ACTIVE));
 	}
 	
 	
