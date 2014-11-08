@@ -27,6 +27,7 @@
 		<junit.version>4.10</junit.version>
 		<com.googlecode.genericdao.version>1.2.0</com.googlecode.genericdao.version>
 	    <org.apache.struts.version>2.3.16.3</org.apache.struts.version>
+	    <json.version>2.4</json.version>
 	</properties>
 	
 	<repositories>
@@ -161,6 +162,12 @@
 			    <groupId>org.apache.struts</groupId>
 			    <artifactId>struts2-convention-plugin</artifactId>
 			    <version>${org.apache.struts.version}</version>
+			</dependency>
+			<dependency>
+			  <groupId>net.sf.json-lib</groupId>
+			  <artifactId>json-lib</artifactId>
+			  <version>${json.version}</version>
+			  <classifier>jdk15</classifier>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

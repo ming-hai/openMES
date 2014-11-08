@@ -1,7 +1,7 @@
 <button type="button" data-dojo-type="dijit/form/Button" class="commandButton">
   <span>Factory Modeling</span>
 	<script type="dojo/on" data-dojo-event="click">
-		demo.addTab("mainTabContainer", "${base}/editor.html", "Factory Modeling", true);
+		demo.addTab("mainTabContainer", "${base}/baseInformation/enterprise!index.action", "Factory Modeling", true);
 	</script>
 </button>
 <button type="button" data-dojo-type="dijit/form/Button" class="commandButton">

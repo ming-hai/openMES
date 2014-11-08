@@ -2,6 +2,7 @@ package com.messolution.openmes.service.baseInfo.factoryModel;
 
 import java.util.List;
 
+import com.messolution.openmes.dojo.dataModel.DojoTree;
 import com.messolution.openmes.entitys.baseInfo.factoryModel.Area;
 import com.messolution.openmes.entitys.baseInfo.factoryModel.AreaCategory;
 import com.messolution.openmes.entitys.baseInfo.factoryModel.Enterprise;
@@ -50,5 +51,5 @@ public interface IFactoryModelService {
     
     public boolean deleteAreaCategory(String ...Ids);
     
-    
+    public DojoTree getFactoryModelTree();
 }

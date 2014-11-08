@@ -4,11 +4,11 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<package name="baseInformation" extends="struts-default">
+	<package name="baseInformation" extends="struts-default" namespace="/baseInformation">
 		
-		<action name="allPersonsFinder"
-			class="edu.ku.it.si.springjpaexample.action.AllPersonsFinder" method="execute">
-			<result name="success">/personsinfo.jsp</result>
+		<action name="enterprise"
+			class="com.messolution.openmes.controller.baseInfo.factoryModel.actions.EnterpriseAction" >
+			<result name="index">/jsp/baseInformation/factoryModeling.jsp</result>
 		</action>
 	</package>
 

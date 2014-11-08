@@ -32,7 +32,7 @@ http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<!-- 使用annotation 自动注册bean(需要用到的包),并保证@Required,@Autowired的属性被注入 -->
 
 	<context:component-scan
-		base-package="com.messolution.openmes.*,com.messolution.opemmes.hibernate.component,edu.ku.it.si.springjpaexample.action" />
+		base-package="com.messolution.openmes.*,com.messolution.opemmes.hibernate.component,com.messolution.openmes.controller.baseInfo.factoryModel.actions" />
 
 	<!-- 配置数据源 -->
 

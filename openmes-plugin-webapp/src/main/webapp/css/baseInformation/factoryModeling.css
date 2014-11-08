@@ -1,0 +1,12 @@
+
+#factoryModel{
+	width: 240px;
+}
+#factoryModelItem{
+	width: 400px;
+}
+#fileGridGridPane {
+	margin: 0;
+	padding: 0;
+	border: none;
+}

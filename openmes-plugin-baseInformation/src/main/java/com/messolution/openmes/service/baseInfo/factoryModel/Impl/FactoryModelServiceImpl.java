@@ -1,6 +1,7 @@
 package com.messolution.openmes.service.baseInfo.factoryModel.Impl;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import com.messolution.openmes.dao.baseInfo.factoryModel.AreaCategoryDao;
 import com.messolution.openmes.dao.baseInfo.factoryModel.AreaDao;
 import com.messolution.openmes.dao.baseInfo.factoryModel.EnterpriseDao;
 import com.messolution.openmes.dao.baseInfo.factoryModel.SiteDao;
+import com.messolution.openmes.dojo.dataModel.DojoTree;
+import com.messolution.openmes.dojo.dataModel.DojoTreeItem;
 import com.messolution.openmes.entitys.baseInfo.factoryModel.Area;
 import com.messolution.openmes.entitys.baseInfo.factoryModel.AreaCategory;
 import com.messolution.openmes.entitys.baseInfo.factoryModel.Enterprise;
@@ -128,6 +131,26 @@ public class FactoryModelServiceImpl extends GeneralDAOImpl implements IFactoryM
 	}
 	
 	
-	
+	public DojoTree getFactoryModelTree(){	
+		DojoTreeItem rootItem = new DojoTreeItem();
+		rootItem.setId("_1");
+		rootItem.setLabel("Web Service");
+		rootItem.setIcon("ocpIconServer");
+		
+		DojoTreeItem dojoTreeItem = new DojoTreeItem();
+		dojoTreeItem.setId("root");
+		List<DojoTreeItem> dojoTreeItemList = new ArrayList<DojoTreeItem>();
+		dojoTreeItemList.add(rootItem);
+		dojoTreeItem.setChildren(dojoTreeItemList);;
+		
+		DojoTree dojoTree = new DojoTree();
+		dojoTree.setIdentifier("id");
+		dojoTree.setLabel("label");
+		List<DojoTreeItem> dojoTreeItemList2 = new ArrayList<DojoTreeItem>();
+		dojoTreeItemList2.add(dojoTreeItem);
+		dojoTree.setItems(dojoTreeItemList2);
+		
+		return dojoTree;
+	}
 
 }
