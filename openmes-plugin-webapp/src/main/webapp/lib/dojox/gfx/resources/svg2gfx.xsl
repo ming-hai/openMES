@@ -1079,7 +1079,7 @@ GMail, etc.) or Eric (Saugus.net, ShellTown, etc.)
 	
 	<xsl:template match="/svg:svg">
 		<xsl:text>[</xsl:text>
-		<xsl:apply-templates/>
+		<xsl:apply-templates />
 		<xsl:text>]</xsl:text>
 	</xsl:template>
 </xsl:stylesheet>
