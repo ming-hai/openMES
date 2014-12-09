@@ -1,5 +1,7 @@
 package com.messolution.openmes.openmes_plugin_baseInfomation;
 
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -92,5 +94,21 @@ public class FactoryModelServiceTest extends  AbstractJUnit4SpringContextTests{
 		AreaCategory ac = new AreaCategory();
 		ac.setName("AreaCategory");
 		factoryModelService.saveOrUpdateAreaCategory(ac);
+	}
+	
+	@Test
+	public void StringTest(){
+		StringBuffer s1 = new StringBuffer("111");
+		StringBuffer s2 = new StringBuffer("222");
+		oprea(s1,s2);
+		System.out.println(s1);
+		System.out.println(s2);
+		
+		FileInputStream i;
+		
+	}
+	
+	private void oprea(StringBuffer s1,StringBuffer s2){
+		s1 =s1.append(s2);
 	}
 }
