@@ -31,8 +31,8 @@
 		            <li data-dojo-type="dijit/MenuItem">
 		                    <script type="dojo/connect" data-dojo-event="onClick">
                            dom.byId("operation").innerHTML = "create";                        
-  //var tn = dijit.byNode(this.getParent().currentTarget);
-                          // alert(tn.item.id);
+  var tn = dijit.byNode(this.getParent().currentTarget);
+                          alert(tn.item.id);
                     </script>
 		                 create
 		            </li>
